@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE.IN</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/lightbox.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header class="menu-bar">
+        <div class="atas-logo">
+            <h4>CODE.IN</h4>
+        </div>
+        <ul class="menu">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="gallery.html">Gallery</a>
+            </li>
+            <li>
+                <a href="FAQ.html">FAQ</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="b1"></div>
+            <div class="b2"></div>
+            <div class="b3"></div>
+        </div>
+    </header>
+    <div class="isi">
+        <div class="parallax-container gallery-parallax1">
+            <h2>Gallery</h2>
+        </div>
+        <div class="gallery-body">
+            <section class="gallery">
+                <div class="gallery-container">
+                    <div class="gallery-row">
+                        <div class="gallery-filter">
+                            <span class="filter-item pilih" data-filter="semua">Semua</span>
+                            <span class="filter-item" data-filter="design">Design</span>
+                            <span class="filter-item" data-filter="android">Android APP</span>
+                            <span class="filter-item" data-filter="website">Website</span>
+                        </div>
+                    </div>
+                    <div class="gallery-row">
+                        <div class="gallery-item android">
+                            <a href="asset/img/gallery/android-app1.png" data-lightbox="android"><img src="asset/img/gallery/android-app1.png" alt="android"></a>
+                        </div>
+                        <div class="gallery-item website">
+                            <a href="asset/img/gallery/web1.png" data-lightbox="website"><img src="asset/img/gallery/web1.png" alt="website"></a>
+                        </div>
+                        <div class="gallery-item design">
+                            <a href="asset/img/gallery/Desaign-3D.png" data-lightbox="design"><img src="asset/img/gallery/Desaign-3D.png" alt="design"></a>
+                        </div>
+                        <div class="gallery-item android">
+                            <a href="asset/img/gallery/android-app2.png" data-lightbox="android"><img src="asset/img/gallery/android-app2.png" alt="android"></a>
+                        </div>
+                        <div class="gallery-item website">
+                            <a href="asset/img/gallery/web2.png" data-lightbox="website"><img src="asset/img/gallery/web2.png" alt="website"></a>
+                        </div>
+                        <div class="gallery-item android">
+                            <a href="asset/img/gallery/android-app3.png" data-lightbox="android"><img src="asset/img/gallery/android-app3.png" alt="android"></a>
+                        </div>
+                        <div class="gallery-item website">
+                            <a href="asset/img/gallery/web3.png" data-lightbox="website"><img src="asset/img/gallery/web3.png" alt="website"></a>
+                        </div>
+                        <div class="gallery-item android">
+                            <a href="asset/img/gallery/android-app4.png" data-lightbox="android"><img src="asset/img/gallery/android-app4.png" alt="android"></a>
+                        </div>
+                        <div class="gallery-item website">
+                            <a href="asset/img/gallery/web4.png" data-lightbox="website"><img src="asset/img/gallery/web4.png" alt="website"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div class="bawah">
+            <div class="bawah-kiri">
+                <div class="bawah-logo">CODE.IN</div>
+                <div class="sosial-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-square"></i></a>
+                </div>
+                <p>&copy; 2020 Created By Brielt All Right Reserved.</p>
+            </div>
+            <div class="bawah-kanan">
+                <h1>Informasi & Promo</h1>
+                <div class="garis"></div>
+                <p>Berlanggan dengan email dan dapatkan informasi dan penawaran menarik.</p>
+                <form action="#" method="post" class="form-email">
+                <input type="text" id="bawah-email" placeholder="Masukan Alamat Email">
+                <input type="submit" id="bawah-submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </footer>
+    <script src="asset/js/app.js"></script>
+    <script src="asset/js/lightbox-plus-jquery.min.js"></script>
+    <script> 
+    // gallery filter
+    const urutan = () =>{
+        const galleryFillter = document.querySelector('.gallery-filter');
+        const galleryItem = document.querySelectorAll('.gallery-item');
+
+        galleryFillter.addEventListener("click", event => {
+            if(event.target.classList.contains("filter-item")){
+                galleryFillter.querySelector('.pilih').classList.remove('pilih');
+                event.target.classList.add('pilih');
+                const filter = event.target.getAttribute('data-filter');
+                galleryItem.forEach((item) =>{
+                    if(item.classList.contains(filter) || filter == 'semua'){
+                        item.classList.remove('sembunyi');
+                        item.classList.add('tampil');
+                    }else{
+                        item.classList.remove('tampil');
+                        item.classList.add('sembunyi');
+                    }
+                });
+            }
+        })
+    }
+    urutan();
+    // end gallery filter
+    </script>
+</body>
+</html>
