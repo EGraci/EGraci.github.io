@@ -828,7 +828,8 @@ footer{
 
 @media screen and (max-width:768px){
     html, body {
-        overflow-x:hidden 
+	max-width: 100%;
+        overflow-x:hidden; 
       }
 
     .menu{
@@ -874,7 +875,8 @@ footer{
 }
 @media screen and (max-width:760px){
     html, body {
-        overflow-x:hidden 
+	    max-width: 100%;
+        overflow-x:hidden;
       }
     .perhitungan-container{
         grid-template-columns: repeat(2,1fr);
